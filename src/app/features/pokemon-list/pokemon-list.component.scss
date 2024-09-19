@@ -1,91 +1,86 @@
-.pokemon-detail {
-    max-width: 1450px;
-    margin: 0 auto;
-    padding: 20px 10px 11px 10px;
-  }
-  
-  /* General Table Styles */
-  .mat-table {
-    width: 100%;
-    table-layout: auto; /* Allows columns to resize based on content */
-  }
-  
-  /* Bootstrap's .table-responsive ensures table scrolls horizontally on small screens */
-  .table-responsive {
-    overflow-x: auto;
-  }
-  
-  /* Custom styles for table header and cells */
-  th.mat-header-cell {
-    background-color: #007bff;
-    color: #fff;
-    font-weight: bold;
-    text-align: left;
-  }
-  
-  td.mat-cell {
-    padding: 10px;
-    text-align: left;
-  }
-  
-  /* Paginator container */
-  .mat-paginator {
-    margin-top: 15px;
-    width: 100%;
-  }
-  
-  /* Search Input Field */
-  .mat-form-field {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .mat-form-field-appearance-fill .mat-form-field-flex {
-    background-color: #f5f5f5; /* Light background for input */
-    border-radius: 4px;
-  }
-  
-  .mat-form-field .mat-label {
-    color: #6c757d; /* Neutral text color for label */
-  }
-  
-  .mat-input-element {
-    padding: 8px;
-    font-size: 1rem;
-  }
-  
-  /* Style for the underline */
-  .mat-form-field-underline {
-    background-color: #007bff;
-  }
-  
-  /* Responsive behavior for small screens */
-  @media (max-width: 768px) {
+.main-content {
+  padding: 20px;
+  background-color: #f9f9f9; // Light background for main content area
+  min-height: 100vh; // Full height of the viewport
+
+  .pokemon-detail {
+    background: #ffffff; // White background for the Pokémon detail card
+    border-radius: 8px; // Rounded corners
+    padding: 20px; // Padding inside the card
+    margin-bottom: 20px; // Space between cards
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Subtle shadow for elevation
+
     .mat-form-field {
-      width: 100%;
+      width: 100%; // Full width for the search field
+      margin-bottom: 20px; // Space below the search field
     }
-  
+
+    .table-responsive {
+      overflow-x: auto; // Enable horizontal scroll for table on small screens
+      margin-bottom: 20px; // Space below the table
+
+      .mat-table {
+        width: 100%; // Full width table
+        background: #ffffff; // White background for table
+        border-collapse: collapse; // Collapse table borders for cleaner look
+
+        th {
+          background-color: #f5f5f5; // Light background for header cells
+          color: #333; // Text color for header cells
+          padding: 12px; // Padding inside header cells
+          text-align: left; // Align text to the left
+          font-weight: 600; // Bold header text
+        }
+
+        td {
+          padding: 12px; // Padding inside cells
+          text-align: left; // Align text to the left
+          vertical-align: middle; // Vertically center content
+          a {
+            color: #00796b; // Link color
+            text-decoration: none; // No underline
+            &:hover {
+              text-decoration: underline; // Underline on hover
+            }
+          }
+
+          button.mat-icon-button {
+            color: #fbc02d; // Gold color for favorite star button
+          }
+        }
+
+        tr:hover {
+          background-color: #f1f1f1; // Light grey background on row hover
+        }
+      }
+    }
+
     .mat-paginator {
-      flex-direction: column;
-      align-items: stretch;
-    }
-  }
-  
-  /* Responsive table: adjust font size and padding for smaller screens */
-  @media (max-width: 576px) {
-    th.mat-header-cell,
-    td.mat-cell {
-      font-size: 14px;
-      padding: 8px;
+      display: flex;
+      justify-content: center; // Center paginator
+      margin-top: 10px; // Space above paginator
     }
   }
 
-  .mat-mdc-form-field{
-    display:block
+  // Responsive Design
+  @media (max-width: 768px) {
+    .pokemon-detail {
+      padding: 15px; // Reduced padding for smaller screens
+      margin-bottom: 15px; // Reduced margin for smaller screens
+
+      .mat-form-field {
+        width: 100%; // Full width for search field on small screens
+      }
+
+      .table-responsive {
+        .mat-table {
+          th,
+          td {
+            padding: 8px; // Reduced padding inside cells for smaller screens
+            font-size: 14px; // Reduced font size for smaller screens
+          }
+        }
+      }
+    }
   }
-  .mat-mdc-text-field-wrapper mdc-text-field mdc-text-field--filled{
-    background-color: #fff;
-  }
-  .mat-mdc-card-title {
-    padding:10px 0px 10px 10px !important;
-  }
+}
