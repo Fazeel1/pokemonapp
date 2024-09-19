@@ -11,6 +11,13 @@ export const routes: Routes = [
         redirectTo: 'home',
         pathMatch: 'full',
       },
+      {
+        path: 'home',
+        loadComponent: () =>
+          import('./features/pokemon-list/pokemon-list.component').then(
+            (m) => m.PokemonListComponent
+          ),
+      }
     ],
   },
   {
