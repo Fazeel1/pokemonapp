@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
-import { MinusIndex } from '../../shared/constants/common.constants';
+import { MinusIndex, PageSize, PageSizeOption } from '../../shared/constants/common.constants';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -30,6 +30,8 @@ export class PokemonListComponent implements OnInit {
   displayedColumns: string[] = ['name', 'favorite'];
   dataSource = new MatTableDataSource<any>();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  pageSizeOption = PageSizeOption;
+  pageSize = PageSize;
 
   constructor(private pokemonService: PokemonService) {}
 
