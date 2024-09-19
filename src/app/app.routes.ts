@@ -17,6 +17,13 @@ export const routes: Routes = [
           import('./features/pokemon-list/pokemon-list.component').then(
             (m) => m.PokemonListComponent
           ),
+      },
+      {
+        path: 'details/:name',
+        loadComponent: () =>
+          import('./features/pokemon-detail/pokemon-detail.component').then(
+            (m) => m.PokemonDetailComponent
+          ),
       }
     ],
   },

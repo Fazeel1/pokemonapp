@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { ApiConfig } from '../shared/constants/api-config';
-import { PokemonListApiResponse } from '../interfaces/pokemon.interface';
+import {
+  PokemonDetail,
+  PokemonListApiResponse,
+} from '../interfaces/pokemon.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -16,5 +19,10 @@ export class PokemonService {
   ): Observable<PokemonListApiResponse> {
     const url = `${ApiConfig.get}?offset=${offset}&limit=${limit}`;
     return this.http.get<PokemonListApiResponse>(url);
+  }
+
+  getPokemonDetail(name: string): Observable<PokemonDetail> {
+    const url = `${ApiConfig.details}/${name}`;
+    return this.http.get<PokemonDetail>(url);
   }
 }
